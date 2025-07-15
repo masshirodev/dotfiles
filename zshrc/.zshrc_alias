@@ -10,7 +10,10 @@ alias rmv="rsync --progress --remove-source-files"
 alias cat="bat"
 alias space="df -h"
 alias copy='xclip -selection clipboard <'
-alias mergejson='$v_scripts/merge_json.py'
+alias mergejson="$v_scripts/merge-json.py"
+alias git-init="$v_scripts/git-init.sh"
+alias to-claude="$v_scripts/to-claude.py"
+alias file-split="$v_scripts/file-split.py"
 
 # Directories
 alias desktop="cd $v_desktop"

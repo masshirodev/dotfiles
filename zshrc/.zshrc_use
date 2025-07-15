@@ -1,5 +1,5 @@
 # nvm
-nvm use v18.20.3 &>/dev/null
+nvm use v20.19 &>/dev/null
 
 # pyenv
 pyenv global 3.11.7 &>/dev/null

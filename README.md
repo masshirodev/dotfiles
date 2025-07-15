@@ -80,9 +80,9 @@ chmod +x ~/.config/myconf/scripts/*
 - Custom configuration for system information display
 
 ### Scripts
-- `merge_json.py` - JSON configuration merger
+- `merge-json.py` - JSON configuration merger
 - `restart-wallpaper.sh` - Wallpaper management
-- `swap_workspaces.sh` - Workspace utilities
+- `swap-workspaces.sh` - Workspace utilities
 
 ## Requirements
 
