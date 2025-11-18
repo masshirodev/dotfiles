@@ -29,3 +29,6 @@ eval "$(pyenv init -)"
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# depot_tools (for chromium development)
+export PATH="$HOME/.bin/depot_tools:$PATH"

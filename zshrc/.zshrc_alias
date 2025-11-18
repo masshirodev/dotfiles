@@ -3,7 +3,7 @@ alias zshrc="lvim $v_zshrc"
 alias rc="lvim $v_zshrc"
 alias hyde="lvim $v_hyde"
 alias refreshenv="clear && source $v_zshrc_base && hyprctl reload >/dev/null"
-alias ls='exa --icons -l -s type --color always --all'
+alias ls='eza --icons -l -s type --color always --all'
 alias ~="cd ~"
 alias rcp="rsync --progress"
 alias rmv="rsync --progress --remove-source-files"
@@ -14,6 +14,7 @@ alias mergejson="$v_scripts/merge-json.py"
 alias git-init="$v_scripts/git-init.sh"
 alias to-claude="$v_scripts/to-claude.py"
 alias file-split="$v_scripts/file-split.py"
+alias ttv="$v_scripts/toggle-tv.sh"
 
 # Directories
 alias desktop="cd $v_desktop"
@@ -31,6 +32,11 @@ alias wprojects="cd $v_wprojects"
 alias discordbot="cd $v_discordbot"
 alias anime="cd $v_anime"
 alias movies="cd $v_movies"
+alias cs2="lvim '$v_cs2'"
+alias farmer="cd $v_farmer"
 
 # Files
 alias fstab="sudo vim $v_fstab"
+
+# Random
+alias v8gen="$HOME/projects/v8/tools/dev/v8gen.py"
