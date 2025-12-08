@@ -32,3 +32,9 @@ export PATH=$PATH:$GOPATH/bin
 
 # depot_tools (for chromium development)
 export PATH="$HOME/.bin/depot_tools:$PATH"
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibus  # fcitx5 works with ibus setting for GLFW
