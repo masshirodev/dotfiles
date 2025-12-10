@@ -1,5 +1,10 @@
 unset color_prompt force_color_prompt
 
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/masshiro/.dart-cli-completion/zsh-config.zsh ]] && . /home/masshiro/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

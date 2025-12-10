@@ -34,6 +34,7 @@ alias anime="cd $v_anime"
 alias movies="cd $v_movies"
 alias cs2="lvim '$v_cs2'"
 alias farmer="cd $v_farmer"
+alias myconf="cd $v_zshrc"
 
 # Files
 alias fstab="sudo vim $v_fstab"
