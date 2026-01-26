@@ -15,6 +15,7 @@ alias git-init="$v_scripts/git-init.sh"
 alias to-claude="$v_scripts/to-claude.py"
 alias file-split="$v_scripts/file-split.py"
 alias ttv="$v_scripts/toggle-tv.sh"
+alias check_install="$v_scripts/check-install.sh"
 
 # Directories
 alias desktop="cd $v_desktop"
@@ -41,3 +42,4 @@ alias fstab="sudo vim $v_fstab"
 
 # Random
 alias v8gen="$HOME/projects/v8/tools/dev/v8gen.py"
+alias restart-audio="systemctl --user reload-or-restart wireplumber"

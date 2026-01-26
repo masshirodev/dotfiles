@@ -12,3 +12,7 @@ lvim.builtin.treesitter.highlight.enable = true
 -- Word wrap
 vim.opt.wrap = true
 vim.opt.linebreak = true
+
+-- Remove padding (scrolloff)
+vim.opt.scrolloff = 0
+vim.opt.sidescrolloff = 0

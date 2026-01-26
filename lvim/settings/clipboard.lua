@@ -12,7 +12,7 @@
 -- }
 
 -- vim.g.clipboard = {
---   name = "xclip-wsl",
+--   name = "xclip",
 --   copy = {
 --     ['+'] = 'xclip -selection clipboard',
 --     ['*'] = 'xclip -selection primary',
