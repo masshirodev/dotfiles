@@ -43,3 +43,8 @@ function jelly() {
    sleep 1
    sudo systemctl status jellyfin.service
 }
+
+function resetcliphistory() {
+  pkill -f "wl-paste.*cliphist" && wl-paste --type text --watch cliphist store &        
+  wl-paste --type image --watch cliphist store &
+}

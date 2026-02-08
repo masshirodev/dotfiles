@@ -40,3 +40,4 @@ export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus  # fcitx5 works with ibus setting for GLFW
 
 export FORCE_THEME_UPDATE=true
+export ANI_CLI_DOWNLOAD_DIR=/mnt/hdd/Animes/

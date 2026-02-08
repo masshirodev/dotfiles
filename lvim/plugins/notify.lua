@@ -9,7 +9,7 @@ return {
     plg.setup({
       fps = 60,
       stages = "fade_in_slide_out",
-      timeout = 6000,
+      timeout = 3000,
       background_colour = "NormalFloat",
       top_down = false,
       max_width = 50,
