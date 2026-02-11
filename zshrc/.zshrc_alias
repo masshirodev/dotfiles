@@ -16,7 +16,7 @@ alias to-claude="$v_scripts/to-claude.py"
 alias file-split="$v_scripts/file-split.py"
 alias ttv="$v_scripts/toggle-tv.sh"
 alias check_install="$v_scripts/check-install.sh"
-alias code="flatpak run com.visualstudio.code"
+alias code="code" # reset now that we arent using flatpak
 
 # Directories
 alias desktop="cd $v_desktop"
@@ -49,3 +49,10 @@ alias anilist="anipy-cli -A"
 alias anidl="anipy-cli -D"
 alias rename-sequence="$HOME/.config/myconf/scripts/rename_sequence.py"
 alias rename-jellyfin="$HOME/.config/myconf/scripts/rename_jellyfin.py"
+alias restart-noctalia="systemctl --user restart noctalia.service"
+
+# AI
+alias ai-on='sudo systemctl start ollama && echo "Ollama started"'
+alias ai-off='sudo systemctl stop ollama && echo "Ollama stopped"'
+alias ai-chat14='ollama run deepseek-r1:14b'
+alias ai-chat32='ollama run deepseek-r1:32b'

@@ -44,6 +44,8 @@ mv ~/.config/hyde ~/.config/hyde.bak
 mv ~/.config/fastfetch ~/.config/fastfetch.bak
 mv ~/.config/kitty ~/.config/kitty.bak
 mv ~/.config/lvim ~/.config/lvim.bak
+mv ~/.config/noctalia ~/.config/noctalia.bak
+mv ~/.config/Kvantum ~/.config/Kvantum.bak
 
 # Create symlinks
 ln -s ~/.config/myconf/dunst ~/.config/dunst
@@ -54,6 +56,9 @@ ln -s ~/.config/myconf/hyde-themes ~/.config/hyde
 ln -s ~/.config/myconf/fastfetch ~/.config/fastfetch
 ln -s ~/.config/myconf/kitty ~/.config/kitty
 ln -s ~/.config/myconf/lvim ~/.config/lvim
+ln -s ~/.config/myconf/noctalia ~/.config/noctalia
+ln -s ~/.config/myconf/kvantum ~/.config/Kvantum
+ln -s ~/.config/myconf/kdeglobals ~/.config/kdeglobals
 ```
 
 3. Make scripts executable:

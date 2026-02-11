@@ -1,4 +1,4 @@
-lvim.colorscheme = "kanagawa"
+lvim.colorscheme = "shado"
 -- require('kanagawa').setup({
 --   compile = true, -- enable compiling the colorscheme
 --   -- undercurl = true, -- enable undercurls

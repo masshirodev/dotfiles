@@ -48,3 +48,22 @@ function resetcliphistory() {
   pkill -f "wl-paste.*cliphist" && wl-paste --type text --watch cliphist store &        
   wl-paste --type image --watch cliphist store &
 }
+
+# Start AI services: Ollama + WebUI + Browser
+ai-up() {
+    sudo systemctl start ollama
+    docker start open-webui
+    sleep 2
+    xdg-open "http://localhost:3000"
+}
+
+# Stop AI services and reclaim VRAM/RAM
+ai-down() {
+    echo "Stopping Open WebUI..."
+    docker stop open-webui >/dev/null 2>&1
+    
+    echo "Stopping Ollama..."
+    sudo systemctl stop ollama
+    
+    echo "All AI services stopped. Resources reclaimed."
+}

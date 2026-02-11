@@ -1,0 +1,18 @@
+{
+  "thumbCacheReady": true,
+  "active": false,
+  "wallpapersFolder": "/home/masshiro/Documents/Backgrounds",
+  "currentWallpaper": "",
+  "hardwareAcceleration": false,
+  "mpvSocket": "/tmp/mpv-socket",
+  "profile": "default",
+  "fillMode": "fit",
+  "automation": false,
+  "automationMode": "random",
+  "automationTime": 300,
+  "oldWallpapers": {
+    "DP-1": "/home/masshiro/Documents/Backgrounds/samurai_cyber.jpg",
+    "DP-2": "/home/masshiro/Documents/Backgrounds/samurai_cyber.jpg"
+  },
+  "isPlaying": true
+}
