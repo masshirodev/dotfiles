@@ -46,9 +46,9 @@
         "displayMode": "always_visible",
         "floating": true,
         "frameRadius": 12,
-        "frameThickness": 8,
+        "frameThickness": 3,
         "hideOnOverview": false,
-        "marginHorizontal": 4,
+        "marginHorizontal": 5,
         "marginVertical": 4,
         "monitors": [
         ],
@@ -612,10 +612,6 @@
             },
             {
                 "enabled": true,
-                "id": "code"
-            },
-            {
-                "enabled": true,
                 "id": "discord"
             },
             {
@@ -625,6 +621,10 @@
             {
                 "enabled": true,
                 "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "code"
             }
         ],
         "enableUserTheming": true
@@ -633,9 +633,9 @@
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "Cantarell",
+        "fontDefault": "Iosevka NFM",
         "fontDefaultScale": 1,
-        "fontFixed": "monospace",
+        "fontFixed": "Iosevka Nerd Font Mono",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.93,
