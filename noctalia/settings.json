@@ -121,7 +121,7 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "maxWidth": 400,
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "textColor": "none",
@@ -190,6 +190,12 @@
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Brightness",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "VPN",
                     "textColor": "none"
                 },
                 {

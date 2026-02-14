@@ -46,6 +46,7 @@ mv ~/.config/kitty ~/.config/kitty.bak
 mv ~/.config/lvim ~/.config/lvim.bak
 mv ~/.config/noctalia ~/.config/noctalia.bak
 mv ~/.config/Kvantum ~/.config/Kvantum.bak
+mv ~/.config/vesktop ~/.config/vesktop.bak
 
 # Create symlinks
 ln -s ~/.config/myconf/dunst ~/.config/dunst
@@ -59,6 +60,7 @@ ln -s ~/.config/myconf/lvim ~/.config/lvim
 ln -s ~/.config/myconf/noctalia ~/.config/noctalia
 ln -s ~/.config/myconf/kvantum ~/.config/Kvantum
 ln -s ~/.config/myconf/kdeglobals ~/.config/kdeglobals
+ln -s ~/.config/myconf/vesktop ~/.config/vesktop
 ```
 
 3. Make scripts executable:

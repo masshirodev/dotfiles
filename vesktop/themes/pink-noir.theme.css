@@ -1,0 +1,172 @@
+/**
+ * @name Pink Noir
+ * @version 1.0.0
+ * @description A cyberpunk-inspired noir theme with vibrant pink accents
+ * @author Claude
+ */
+
+@import url("material-discord-base.css");
+
+/* MATERIAL YOU DARK THEME SETTINGS */
+.theme-dark {
+    --saturation-modifier: 0.85;
+    --lightness-modifier: 0.18;
+    --text-lightness-modifier: 1.2;
+}
+
+/* MATERIAL YOU LIGHT THEME SETTINGS */
+.theme-light {
+    --saturation-modifier: 0.75;
+    --lightness-modifier: 2.0;
+    --text-lightness-modifier: 1.0;
+}
+
+:root, .theme-dark, .theme-light {
+  /* Font Override */
+  --app-font: "Iosevka NF", "Iosevka Nerd Font", monospace;
+  --app-font-weight: 400;
+  --app-font-weight-bold: 700;
+  --app-font-size: 16px;
+
+  /* Pink Noir Accent Colors */
+  --accent-hue: 330;
+  --accent-saturation: 100%;
+  --accent-lightness: 65%;
+  --accent-text-color: #0a0a0a;
+
+  /* Deep Noir Backgrounds */
+  --app-bg: #0a0a0a;
+  --main-color: #0f0a0d;
+  --main-alt: #1a1214;
+  --server-color: #0a0a0a;
+  --status-picker-color: #1a0f16;
+  --sidebar-panel-color: #1a0f16;
+  --chat-color: #0f0a0d;
+  --tooltip-color: #1a0f16;
+  --tooltip-text-color: #ff99cc;
+
+  /* Message Colors */
+  --message-color: #1a0f16;
+  --message-color-hover: hsl(
+    var(--accent-hue),
+    calc(var(--accent-saturation) * var(--saturation-modifier) * var(--saturation-factor)),
+    calc(var(--accent-lightness) * var(--lightness-modifier) * var(--ui-darkness-modifier) * 2.5)
+  ) !important;
+  --message-color-alt: #0f0a0d;
+  --attachment-color: #1a0f16;
+  --main-textarea-color: #2d1a24;
+  --main-textarea-button-color: #1a0f16;
+  --main-textarea-color-alt: #3d2433;
+  --main-textarea-border: #ff1a8c;
+
+  /* Card & Button Colors */
+  --card-color-filled: #1a0f16;
+  --card-color-hover: #ff1a8c;
+  --card-color-active: #ff0080;
+  --card-color-alt: #ff1a8c;
+  --card-color-alt-hover: #ff4da6;
+  --card-border-color: #2d1a24;
+  --card-header-text-color: #ffb3d9;
+
+  /* Slider & Switch */
+  --switch-knob-color: #ff1a8c;
+  --switch-slider-color: #1a0f16;
+
+  /* Input Colors */
+  --input-text-color: #ffb3d9;
+
+  /* Watermark */
+  --app-watermark-one: "Masshiro";
+  --app-watermark-two: "Iro";
+
+  /* Text Colors - Bright pink for active, muted pink for inactive */
+  --text-primary: #ffcceb;
+  --text-secondary: #ff99cc;
+  --text-tertiary: hsl(
+    var(--accent-hue),
+    calc(var(--accent-saturation) * var(--saturation-modifier) * 0.6 * var(--saturation-factor)),
+    calc(var(--accent-lightness) * var(--lightness-modifier) * var(--ui-darkness-modifier) * var(--text-lightness-modifier) * 2.8)
+  ) !important;
+}
+
+/* Custom Pink Noir Enhancements */
+:root {
+  /* Neon Pink Glow Effects */
+  --glow-color: rgba(255, 26, 140, 0.3);
+  --glow-strong: rgba(255, 0, 128, 0.5);
+
+  /* Scrollbar */
+  --scrollbar-thumb: #ff1a8c;
+  --scrollbar-track: #1a0f16;
+
+  /* Border radius for specific elements */
+  --border-radius-md: 4px;
+}
+
+/* Custom */
+.buttons__74017 div div {
+  color: var(--text-secondary) !important;
+}
+.spriteContainer__04eed {
+  color: var(--text-secondary) !important;
+}
+
+/* Add subtle glow to buttons and interactive elements */
+.theme-dark button:hover,
+.theme-dark [role="button"]:hover {
+  box-shadow: 0 0 8px var(--glow-color);
+}
+
+/* Enhance selected/active states with neon glow */
+.theme-dark .selected-2r1Hvo,
+.theme-dark .item-2LIpTv[aria-checked="true"] {
+  box-shadow: 0 0 10px var(--glow-strong);
+}
+
+/* Pink neon text glow for usernames and mentions */
+.theme-dark .username-h_Y3Us:hover,
+.theme-dark .mention:hover {
+  text-shadow: 0 0 5px var(--glow-color);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff1a8c 0%, #cc0066 100%);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+/* Noir borders with subtle pink tint */
+.theme-dark .container-1zzFcN,
+.theme-dark .panels-3wFtMD,
+.theme-dark .sidebar-1tnWFu {
+  border-color: #2d1a24;
+}
+
+/* Make notification/status bubbles more rectangular, not pill-shaped */
+.theme-dark .notice-2HEN-u,
+.theme-dark .container-6sXIoE,
+.theme-dark .activity-2Gy-9S,
+.theme-dark .activityPanel-9icbyU,
+.theme-dark .customStatus-3XAoF9 {
+  border-radius: var(--border-radius-md) !important;
+}
+
+/* User panel rectangular with rounded corners */
+.theme-dark .container-YkUktl,
+.theme-dark .panels-3wFtMD > *,
+.theme-dark .wrapper-3Hk9OB,
+.theme-dark .accountProfileCard-lbN7n-,
+.theme-dark .panel-2ZHCRb {
+  border-radius: var(--border-radius-md) !important;
+}
+
+/* Voice/stream panels more rectangular */
+.theme-dark .container-1zzFcN {
+  border-radius: var(--border-radius-md) !important;
+}
+
+

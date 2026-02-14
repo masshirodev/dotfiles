@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Quick OCR and Search
-# Dependencies: grim, slurp, tesseract, wl-clipboard, xdg-utils, jq
+# Dependencies: grim, slurp, tesseract, wl-clipboard, xdg-utils, jq, glow
 # Usage: ocr-search.sh [mode]
 #   no parameter = search only OCR text on Google
 #   context      = search with window context on Google
@@ -41,6 +41,66 @@ echo "$TEXT" | wl-copy
 
 # Handle different modes
 case "$MODE" in
+    gemini)
+        # 1. Load API Key from ../.env
+        if [ -f "$(dirname "$0")/../.env" ]; then
+            source "$(dirname "$0")/../.env"
+            API_KEY="$GEMINI_API_KEY"
+        fi
+
+        if [ -z "$API_KEY" ]; then
+            notify-send "Gemini" "Error: API_KEY not found in ../.env"
+            exit 1
+        fi
+
+        notify-send "Gemini" "Analyzing screenshot..." -t 3000
+
+        # 2. Base64 encode image
+        B64_DATA=$(base64 -w 0 "$SCREENSHOT")
+
+        # 3. Request (Note: Using 1.5-flash as 2.5 is not a standard public ID yet)
+        RESPONSE=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key=$API_KEY" \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"contents\": [{
+                \"parts\": [
+                  {\"text\": \"Context: $WINDOW_TITLE. Analyze this screenshot.\"},
+                  {\"inline_data\": {\"mime_type\": \"image/png\", \"data\": \"$B64_DATA\"}}
+                ]
+              }]
+            }")
+
+        # 4. Extract content
+        FINAL_TEXT=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text')
+
+        if [ "$FINAL_TEXT" != "null" ] && [ -n "$FINAL_TEXT" ]; then
+            RESP_FILE="/tmp/gemini_last_resp.md"
+            CURRENT_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+            
+            # Prepare the Markdown file
+            {
+                echo "# Gemini Analysis"
+                echo "**Date:** $CURRENT_TIME | **Context:** $WINDOW_TITLE"
+                echo "---"
+                echo ""
+                echo "$FINAL_TEXT"
+            } > "$RESP_FILE"
+
+            # Copy to clipboard
+            echo "$FINAL_TEXT" | wl-copy
+            
+            # 5. Launch Kitty
+            # - COLORTERM=truecolor: Enables the Dracula hex colors
+            # - less -R: Keeps window open until 'q' is pressed, supports colors/scrolling
+            hyprctl dispatch exec "[float; size 1000 800] kitty --title 'Gemini Result' sh -c 'clear && export COLORTERM=truecolor && glow --style /home/masshiro/.config/myconf/themes/glow-dracula.json $RESP_FILE && read'"
+            
+            notify-send "Gemini" "Response ready (Press Q to close result)" -t 3000
+        else
+            echo "Error from Gemini API:"
+            echo "$RESPONSE" | jq .
+            notify-send "Gemini" "API Error - check terminal" -u critical
+        fi
+        ;;
     jisho)
         # Search on Jisho (Japanese dictionary)
         notify-send "OCR Search" "Searching on Jisho: $TEXT" -t 3000
